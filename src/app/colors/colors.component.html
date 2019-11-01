@@ -1,0 +1,19 @@
+<div *ngIf="selectedColor"
+    class="details">
+    <div [style.background-color]="selectedColor.hex" class="round"></div>
+    <label class="hex">{{selectedColor.name}} hex:
+        <input class="edit-input" [(ngModel)]="selectedColor.hex" placeholder="name"/>
+    </label>
+    <div [style.background-color]="selectedColor.hex" class="line"></div>
+</div>
+<div class="container">    
+    <ul>
+        <li *ngFor="let color of colors"
+                (click)="onSelect(color)">    
+            <div class="color"
+                [style.background-color]="color.hex">
+                    {{color.hex}}
+            </div> 
+        </li>
+    </ul>
+</div>
